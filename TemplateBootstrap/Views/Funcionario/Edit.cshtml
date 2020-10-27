@@ -1,0 +1,72 @@
+﻿@model TemplateBootstrap.Models.funcionarioModel
+
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Funcionário</h2>
+
+<div class="text-xs font-weight-bold text-primary
+    text-uppercase mb-1">Editar Funcionario</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="form-group col-md-12">
+            @Html.LabelFor(model => model.Nome,
+          htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="form-group col-10">
+                @Html.EditorFor(model => model.Nome,
+             new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "",
+               new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            @Html.LabelFor(model => model.Endereco,
+          htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="form-group col-10">
+                @Html.EditorFor(model => model.Endereco,
+             new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Endereco, "",
+               new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            @Html.LabelFor(model => model.Email,
+          htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="form-group col-10">
+                @Html.EditorFor(model => model.Email,
+             new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "",
+               new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <br />
+     <div class="row">
+        <div class="form-group col-md-12">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-warning btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="far fa-save"></i>
+                    </span>
+                    <span class="text">Alterar</span>
+                </button>
+
+                <a class="btn btn-light" href="~/Funcionario?Index">Voltar</a>
+            </div>
+        </div>
+  </div>
+
+}
+
